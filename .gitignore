@@ -1,0 +1,5 @@
+# local tooling / logs
+.zwork/
+*.log
+.DS_Store
+Thumbs.db
