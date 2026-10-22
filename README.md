@@ -1,6 +1,6 @@
 # Charvik Adventures
 
-A browser platformer in one HTML file. 8 chapters, 8 animal wardens, 11 spirit powers, 3 playable explorers — no build step, no framework. Level art and audio are generated in code; the eight warden lairs use painted backdrops from `assets/`.
+A browser platformer in one HTML file. 8 chapters, 8 animal wardens, 11 spirit powers, 3 playable explorers — no build step, no framework. Level art and audio are generated in code; each warden is a photoreal cut-out taken from its own painting, standing in front of a blurred, darkened version of that lair.
 
 **Play online:** https://devtripathix.github.io/charvik-adventures/
 
@@ -42,7 +42,10 @@ Each chapter gives one power from a mid-level stone totem and one from its warde
 
 ## Warden lairs & sound
 
-- Entering an arena paints the warden's lair across the whole view and raises a title card with its portrait.
+- **Photoreal wardens.** Each animal was cut out of its painting (u2net matting), trimmed to solid alpha and shipped as WebP with transparency. In game the cut-out breathes, bobs, leans into a charge, squashes on a pounce and flashes white when hit — with a soft rim glow so dark coats (wolf, godzilla) read against dark lairs.
+- **Each animal fights its own way.** Pincer snaps, pounce + claw flurry, pack howl, frost volley, trunk wave, venom arc, quake slam, atomic breath — on separate cooldowns from the charge/pounce state machine, so they no longer just stomp.
+- **Lair furniture.** The arena floor is lined with that chapter's wreckage: ship ribs and foam, buttress roots and bones, skull piles and stalagmites, ice shards, mud mounds and reeds, altar stones and venom pools, obsidian and lava cracks, collapsed concrete and rebar.
+- Entering an arena raises a title card with the warden's portrait.
 - Jungle, swamp and cenote chapters run a procedural ambience bed — cicada drones, canopy bird calls, dripping water.
 - The city chapter adds rainfall, distance thunder and lightning flashes.
 - Boss music drops a minor-key percussion layer that speeds up as the warden loses health; each fight opens with a roar stinger.
@@ -64,7 +67,8 @@ python -m http.server 8027 --bind 0.0.0.0
 ## Files
 
 - `game.html` — the whole game (code, level data, canvas art, procedural audio)
-- `assets/boss_*.jpg` — the eight warden lair paintings (1280×720)
+- `assets/boss_*.jpg` — the eight warden lair paintings (1280×720), used as blurred arena vistas and card art
+- `assets/cut/*.webp` — the eight warden cut-outs used as the in-game sprites (transparent)
 - `index.html` — redirect, so a static host serves the game at the site root
 - `game.html.txt` — early snapshot of the first prototype (kept for reference)
 
