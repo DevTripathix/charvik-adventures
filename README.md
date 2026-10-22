@@ -2,7 +2,9 @@
 
 A browser platformer in one HTML file. 8 chapters, 8 animal wardens, 11 spirit powers, 3 playable explorers — no build step, no framework. Level art and audio are generated in code; the eight warden lairs use painted backdrops from `assets/`.
 
-**Play it:** open `game.html` in any modern browser (desktop or phone), or serve the folder (see below) so the `assets/` images load.
+**Play online:** https://devtripathix.github.io/charvik-adventures/
+
+**Play locally:** open `game.html` in any modern browser (desktop or phone), or serve the folder (see below) so the `assets/` images load.
 
 ## Controls
 
