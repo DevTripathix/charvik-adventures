@@ -42,12 +42,12 @@ Each chapter gives one power from a mid-level stone totem and one from its warde
 
 ## Warden lairs & sound
 
-- **Photoreal wardens.** Each animal was cut out of its painting (u2net matting), trimmed to solid alpha and shipped as WebP with transparency. In game the cut-out breathes, bobs, leans into a charge, squashes on a pounce and flashes white when hit — with a soft rim glow so dark coats (wolf, godzilla) read against dark lairs.
-- **Each animal fights its own way.** Pincer snaps, pounce + claw flurry, pack howl, frost volley, trunk wave, venom arc, quake slam, atomic breath — on separate cooldowns from the charge/pounce state machine, so they no longer just stomp.
-- **Lair furniture.** The arena floor is lined with that chapter's wreckage: ship ribs and foam, buttress roots and bones, skull piles and stalagmites, ice shards, mud mounds and reeds, altar stones and venom pools, obsidian and lava cracks, collapsed concrete and rebar.
-- Entering an arena raises a title card with the warden's portrait.
-- Jungle, swamp and cenote chapters run a procedural ambience bed — cicada drones, canopy bird calls, dripping water.
-- The city chapter adds rainfall, distance thunder and lightning flashes.
+- **Two-pose 2D characters.** Each warden has an idle pose and a generated attack pose (image-to-image from its own painting, then matted to transparent WebP). The game cross-fades between them, adds squash/lean/bob and a white hit flash, so a pounce actually changes silhouette instead of sliding one still around.
+- **Each animal fights its own way.** Pincer snaps, pounce + claw flurry, pack howl that summons two cubs at half health, frost volleys + dive + landing slam, trunk wave, venom arc, quake slam with falling rocks, atomic breath — on separate cooldowns from the charge/pounce state machine.
+- **Per-chapter scenery.** Dense canopy with buttress-rooted trunks, a river band and bones on the bank (jungle); sea stacks and a wrecked hull (cove); columns and a moon shaft (caverns); ice spires over a lava rift (frostpeak); mangrove roots over stagnant water (swamp, cenote); lava falls and obsidian (forge); flooded towers and neon (city). Ground has strata and grit so the cut-away earth no longer reads as a flat slab.
+- **Lair furniture.** Arena floors carry that chapter's wreckage — ship ribs, bones, skull piles, ice shards, reeds, altar stones with venom pools, obsidian, rebar.
+- Jungle/swamp/cenote ambience: cicada drones, canopy bird calls and a low humid-air bed, ducked but still present during fights.
+- The city chapter adds rainfall, distant thunder and lightning flashes.
 - Boss music drops a minor-key percussion layer that speeds up as the warden loses health; each fight opens with a roar stinger.
 
 ## Run locally
@@ -68,7 +68,7 @@ python -m http.server 8027 --bind 0.0.0.0
 
 - `game.html` — the whole game (code, level data, canvas art, procedural audio)
 - `assets/boss_*.jpg` — the eight warden lair paintings (1280×720), used as blurred arena vistas and card art
-- `assets/cut/*.webp` — the eight warden cut-outs used as the in-game sprites (transparent)
+- `assets/cut/*.webp` — warden sprites: `name.webp` idle, `name_atk.webp` attack pose (transparent)
 - `index.html` — redirect, so a static host serves the game at the site root
 - `game.html.txt` — early snapshot of the first prototype (kept for reference)
 
